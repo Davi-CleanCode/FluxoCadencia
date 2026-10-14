@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Fluxo de Cadência: um kit prático para organizar sua prospecção ativa pelo WhatsApp e Instagram." />
+  <meta name="theme-color" content="#f8f5ef" />
+  <title>Fluxo de Cadência | Prospecção com método</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4424416794447577');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=4424416794447577&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root {
+      --paper: #f8f5ef;
+      --white: #fff;
+      --ink: #171412;
+      --muted: #655f58;
+      --line: #ded6ca;
+      --orange: #c9430c;
+      --orange-bright: #f06424;
+      --dark: #171412;
+      --dark-card: #211e1b;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 76px 0 68px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+
+    h1,
+    h2,
+    h3,
+    .price {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Franklin Gothic Condensed", sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -.025em;
+      line-height: .99;
+    }
+
+    h1 {
+      font-size: clamp(42px, 5.5vw, 70px);
+      margin: 0 0 20px;
+      max-width: 620px;
+    }
+
+    .lead {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 510px;
+      margin: 0 0 24px;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      border: 0;
+      border-radius: 7px;
+      padding: 15px 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 12px;
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .btn:hover {
+      background: #a93608;
+      transform: translateY(-2px);
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .price-note strong {
+      color: var(--orange);
+      font-size: 27px;
+      margin-left: 4px;
+    }
+
+    .micro {
+      display: flex;
+      gap: 17px;
+      flex-wrap: wrap;
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .mock-window {
+      background: var(--dark);
+      color: #f8f5ef;
+      border-radius: 13px;
+      padding: 0 22px 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px #17141215;
+    }
+
+    .window-bar {
+      margin: 0 -22px 20px;
+      padding: 13px 17px;
+      background: #292522;
+      display: flex;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #766f68;
+    }
+
+    .terminal-label {
+      color: #ff7b3f;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .chat {
+      border: 1px solid #45403a;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 9px 0;
+      font-size: 11px;
+      color: #e8e1d8;
+    }
+
+    .chat small {
+      display: block;
+      color: #b8aea3;
+      margin-top: 5px;
+    }
+
+    .tag {
+      float: right;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-size: 9px;
+      font-weight: 900;
+      background: #f6c66d;
+      color: #211e1b;
+    }
+
+    .video-space {
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .video-placeholder {
+      width: min(760px, 100%);
+      min-height: 230px;
+      margin: 18px auto 0;
+      background: var(--dark);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 25px;
+    }
+
+    .play {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--orange);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .video-placeholder p {
+      margin: 0;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    section {
+      padding: 66px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-white {
+      background: var(--white);
+    }
+
+    .section-dark {
+      background: var(--dark);
+      color: var(--white);
+      border-color: var(--dark);
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      margin: 0 0 14px;
+      max-width: 690px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 0 28px;
+    }
+
+    .section-dark .section-intro {
+      color: #c6beb5;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 22px;
+      background: transparent;
+    }
+
+    .section-dark .card {
+      border-color: #49423c;
+    }
+
+    .number {
+      font-size: 10px;
+      color: var(--orange-bright);
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+
+    h3 {
+      font-size: 21px;
+      margin: 10px 0 9px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section-dark .card p {
+      color: #c6beb5;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+      border-top: 1px solid var(--ink);
+      padding-top: 18px;
+    }
+
+    .step-num {
+      font-size: 36px;
+      color: var(--orange);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .step h3 {
+      margin-top: 9px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .offer {
+      text-align: center;
+    }
+
+    .offer h2 {
+      margin: 0 auto 20px;
+    }
+
+    .offer .price {
+      font-size: clamp(48px, 7vw, 74px);
+      color: var(--orange-bright);
+      margin: 12px 0;
+    }
+
+    .offer .price small {
+      color: #c6beb5;
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .offer-copy {
+      color: #c6beb5;
+      font-size: 13px;
+      margin: 0 auto 22px;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .faq {
+      max-width: 760px;
+      margin: 26px auto 0;
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+      padding: 17px 0;
+    }
+
+    summary {
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    details p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #c6beb5;
+      padding: 30px 0;
+      font-size: 11px;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: white;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 32px, var(--max));
+      }
+
+      .hero {
+        padding: 48px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 13vw, 62px);
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .fit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .video-space {
+        margin-top: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">Um processo mais claro para sua prospecção ativa</div>
+
+  <main>
+    <section class="hero" style="border-top:0">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Para quem vende serviços digitais</p>
+            <h1>Chega de improvisar na prospecção.</h1>
+            <p class="lead">Organize suas abordagens pelo WhatsApp e Instagram com um fluxo prático de cadência,
+              exemplos de mensagens e caminhos para lidar com objeções.</p>
+            <div class="cta-row">
+              <a class="btn checkout-link" href="https://pay.kiwify.com.br/NFPSyZ6">Quero acessar o kit <span
+                  aria-hidden="true">↗</span></a>
+              <div class="price-note">Acesso por <strong>R$ 9,90</strong></div>
+            </div>
+            <div class="micro"><span>Acesso digital</span><span>Material prático</span><span>Pagamento seguro</span>
+            </div>
+          </div>
+          <div class="mock-window" aria-label="Exemplo visual de um fluxo de prospecção">
+            <div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="terminal-label">Fluxo de Cadência / roteiro de exemplo</div>
+            <div class="chat"><span class="tag">ABORDAR</span><strong>01 — Primeiro contato</strong><small>Mensagem
+                curta, contextualizada e sem pressão.</small></div>
+            <div class="chat"><span class="tag">RETOMAR</span><strong>02 — Follow-up</strong><small>Retome a conversa
+                com contexto e motivo.</small></div>
+            <div class="chat"><span class="tag">QUALIFICAR</span><strong>03 — Próximo passo</strong><small>Entenda o
+                cenário antes de apresentar a solução.</small></div>
+            <div class="chat"><strong>Objetivo:</strong><small>Ter um processo consistente — não enviar mensagens
+                aleatórias.</small></div>
+          </div>
+        </div>
+        <div class="video-space">
+          <p class="eyebrow">Comece por aqui</p>
+          <div class="video-placeholder">
+            <div class="play" aria-hidden="true">▶</div>
+            <p>Guia em vídeo para entender como usar o kit</p>
+            <p style="margin-top:8px;opacity:.65;text-transform:none;letter-spacing:0">O vídeo será disponibilizado na
+              área de membros após a compra.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="wrap">
+        <p class="eyebrow">O problema</p>
+        <h2>Menos dúvida na hora de abordar.</h2>
+        <p class="section-intro">A prospecção fica mais difícil quando cada mensagem é criada do zero e não existe uma
+          lógica clara para continuar a conversa.</p>
+        <div class="cards">
+          <article class="card"><span class="number">01</span>
+            <h3>Começar do zero</h3>
+            <p>Tenha uma referência para iniciar conversas sem depender de inspiração toda vez.</p>
+          </article>
+          <article class="card"><span class="number">02</span>
+            <h3>Perder o timing</h3>
+            <p>Entenda como organizar os contatos e as retomadas ao longo da cadência.</p>
+          </article>
+          <article class="card"><span class="number">03</span>
+            <h3>Travar nas objeções</h3>
+            <p>Prepare respostas e próximos passos sem transformar a conversa em pressão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">O que você recebe</p>
+        <h2>Um kit prático. Sem aulas intermináveis.</h2>
+        <p class="section-intro">Materiais de consulta para adaptar à sua oferta, ao seu nicho e ao seu jeito de
+          conversar.</p>
+        <div class="cards">
+          <article class="card"><span class="number">01</span>
+            <h3>Guia de utilização</h3>
+            <p>Um vídeo inicial para entender a proposta do kit e como colocar os materiais em prática.</p>
+          </article>
+          <article class="card"><span class="number">02</span>
+            <h3>Playbook de abordagem</h3>
+            <p>Referências de primeira mensagem para WhatsApp e Instagram, com foco em um contato natural e
+              contextualizado.</p>
+          </article>
+          <article class="card"><span class="number">03</span>
+            <h3>Playbook de prospecção</h3>
+            <p>Cadência, retomadas e contorno de objeções organizados para diferentes nichos de serviços digitais.</p>
+          </article>
+          <article class="card"><span class="number">04</span>
+            <h3>Bônus: Social Selling</h3>
+            <p>Orientações para usar o perfil e as interações sociais como apoio à construção de conversas comerciais.
+            </p>
+          </article>
+          <article class="card"><span class="number">05</span>
+            <h3>WhatsApp + Instagram</h3>
+            <p>Use os canais em que seus potenciais clientes já estão, adaptando a mensagem ao contexto.</p>
+          </article>
+          <article class="card"><span class="number">06</span>
+            <h3>Adapte ao seu serviço</h3>
+            <p>Uma base para profissionais que oferecem tráfego pago, criação de sites e outros serviços digitais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="wrap">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Três passos para começar.</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Acesse</h3>
+            <p>Finalize a compra e entre na área de membros para encontrar os materiais.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Escolha a abordagem</h3>
+            <p>Consulte o playbook e adapte a mensagem ao nicho e à situação do contato.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Execute e acompanhe</h3>
+            <p>Organize as retomadas e aprenda com as respostas, sem copiar mensagens de forma automática.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark offer">
+      <div class="wrap">
+        <p class="eyebrow">Acesso ao kit</p>
+        <h2>Comece com um processo mais organizado.</h2>
+        <div class="price">R$ 9,90</div>
+        <p class="offer-copy">Pagamento único. Produto digital com acesso pela área de membros da Kiwify.</p>
+        <a class="btn checkout-link" href="https://pay.kiwify.com.br/NFPSyZ6">Quero acessar o Fluxo de Cadência</a>
+        <div class="micro" style="justify-content:center;color:#c6beb5"><span>Checkout seguro</span><span>Entrega
+            digital</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap fit-grid">
+        <article class="card">
+          <p class="eyebrow">É para você se</p>
+          <h3>Quer uma referência para prospectar</h3>
+          <p>Você vende serviços digitais e quer organizar melhor suas primeiras mensagens, follow-ups e respostas a
+            objeções.</p>
+        </article>
+        <article class="card">
+          <p class="eyebrow">Talvez não seja para você se</p>
+          <h3>Espera resultados automáticos</h3>
+          <p>O material não substitui execução, personalização, oferta adequada ou acompanhamento. Não há garantia de
+            clientes ou vendas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="wrap">
+        <h2 style="text-align:center;margin-left:auto;margin-right:auto">Perguntas frequentes</h2>
+        <div class="faq">
+          <details>
+            <summary>Preciso fazer aulas?</summary>
+            <p>Não é um curso com aulas sequenciais. O kit reúne playbooks de consulta e um vídeo inicial de orientação.
+            </p>
+          </details>
+          <details>
+            <summary>Para quem é o Fluxo de Cadência?</summary>
+            <p>Principalmente para quem oferece serviços digitais, como gestão de tráfego pago e criação de sites, e
+              quer melhorar a organização da prospecção.</p>
+          </details>
+          <details>
+            <summary>As mensagens servem para qualquer nicho?</summary>
+            <p>Use os exemplos como ponto de partida. Adapte a linguagem, o contexto e a oferta para cada pessoa e
+              segmento.</p>
+          </details>
+          <details>
+            <summary>O kit garante clientes ou vendas?</summary>
+            <p>Não. O resultado depende de fatores como oferta, abordagem, mercado, consistência e execução.</p>
+          </details>
+          <details>
+            <summary>Como recebo o material?</summary>
+            <p>Após a confirmação do pagamento, siga as instruções da Kiwify para acessar a área de membros do produto.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <div class="brand">FLUXO DE CADÊNCIA</div>
+        <p>Material educacional para apoiar a organização da prospecção ativa.</p>
+      </div>
+      <div>© <span id="year"></span> • Todos os direitos reservados</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Registra InitiateCheckout ao clicar no CTA. A compra deve ser registrada pela Kiwify
+    // após a confirmação do pagamento; não dispare Purchase nesta página.
+    document.querySelectorAll('.checkout-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
+      });
+    });
+  </script>
+</body>
+
+</html>
